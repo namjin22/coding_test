@@ -1,21 +1,28 @@
 #include <stdio.h>
 int main(){
 
-    int t, v;
-    int n[101];
+    int t;
+    int N[1001];
     int sum = 0;
 
     scanf("%d", &t);
 
-    for(int a = 0; a < t; a++) {
-        scanf("%d", &n[a]);
+    for(int i = 0; i < t; i++){
+        scanf("%d", &N[i]);
     }
 
-    scanf("%d", &v);
+    sum = N[0];
 
-    for(int b = 0; b < t; b++) {
-        if(n[b] == v) {
-            sum++;
+    for(int i = 0; i < t; i++){
+        if(sum < N[i]){
+            sum = N[i];
         }
     }
+
+    for (int i = 0; i < t; i++){
+        N[i] = (N[i] / sum) * 100;
+        sum += N[i];
+    }
+
+    printf("%f", (float)sum / t);
 }
