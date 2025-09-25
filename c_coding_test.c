@@ -4,6 +4,7 @@ int main(){
     int t;
     int N[1001];
     int sum = 0;
+    double num = 0;
 
     scanf("%d", &t);
 
@@ -20,9 +21,9 @@ int main(){
     }
 
     for (int i = 0; i < t; i++){
-        N[i] = (N[i] / sum) * 100;
-        sum += N[i];
+        N[i] = (N[i] / (double)sum) * 100;
+        num += N[i];
     }
 
-    printf("%f", (float)sum / t);
+    printf("%f", num / t);
 }
